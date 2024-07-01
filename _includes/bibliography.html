@@ -25,7 +25,7 @@
                     </strong>
                     {% assign event = ref.parent | where: "type", "conference" | first %}
                     {% if event %}
-                    <br>{{ event.title | remove: lbrace | remove: rbrace | replace: '~', '&nbsp;' }}.
+                    {{ event.title | remove: lbrace | remove: rbrace | replace: '~', '&nbsp;' }}.
                     {{ event.location | remove: lbrace | remove: rbrace | replace: '~', '&nbsp;' }}.
                     {% else %}
                     {% if ref.type == "manuscript" %}
@@ -35,7 +35,7 @@
                     <br>
                     {% for serial in ref.serial-number %}
                     {% case serial[0] %}
-                        {% when "hal" %}
+                        {% when "pdf" %}
                             {% assign url = "https://hal.science/" | append: serial[1] %}
                         {% when "doi" %}
                             {% assign url = "https://doi.org/" | append: serial[1] %}

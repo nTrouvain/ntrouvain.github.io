@@ -211,44 +211,56 @@ a.resource {
   }
 
   &.pdf { 
+    border-color: olivedrab;
+    color: olivedrab;
     &:hover {
-      border-color: darkred;
-      color: darkred;
+      background-color: olivedrab;
+      color: white;
     }
   }
 
   &.doi { 
+    border-color: goldenrod;
+    color: goldenrod;
     &:hover {
-      border-color: goldenrod;
-      color: goldenrod;
+      background-color: goldenrod;
+      color: white;
     }
   }
 
   &.code {
+    border-color: SteelBlue;
+    color: SteelBlue;
     &:hover {
-      border-color: SteelBlue;
-      color: SteelBlue;
+      background-color: steelblue;
+      color: white;
     }
   }
 
   &.video {
+    border-color: Crimson;
+    color: Crimson;
     &:hover {
-      border-color: Crimson;
-      color: Crimson;
+      background-color: crimson;
+      color: white;
     }
   }
 
   &.slides {
+    border-color: Sienna;
+    color: Sienna;
     &:hover {
-      border-color: Sienna;
-      color: Sienna;
+      background-color: sienna;
+      color: white;
     }
   }
 
   &.event {
+    border-color: SandyBrown;
+    color: SandyBrown;
     &:hover {
-      border-color: SandyBrown;
-      color: SandyBrown;
+      background-color: sandybrown;
+      color: white;
     }
   }
 }
