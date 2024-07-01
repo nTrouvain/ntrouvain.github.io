@@ -1,0 +1,28 @@
+all:
+  - hinaut2021hype
+  - oota2023meg
+  - reddyoota2023neurofrance
+  - trouvain2022reservoirpy
+  - trouvain2023sprint
+  - trouvain2021canary
+  - trouvain2022sab
+  - trouvain2022scai
+  - trouvain2022dataquitaine
+  - trouvain2020reservoirpy
+selected:
+  - trouvain2020reservoirpy
+  - pagliarini2021canary
+  - oota2023meg
+article:
+  - oota2023meg
+  - trouvain2022sab
+  - hinaut2021hype
+  - pagliarini2021canary
+  - trouvain2021canary
+  - trouvain2020reservoirpy
+poster:
+  - reddyoota2023neurofrance
+presentation:
+  - trouvain2022scai
+  - trouvain2022dataquitaine
+  - trouvain2023sprint

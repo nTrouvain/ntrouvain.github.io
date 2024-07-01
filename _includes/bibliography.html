@@ -1,0 +1,58 @@
+{% assign lbrace = '{' %}
+{% assign rbrace = '}' %}
+
+{% assign pub_types = "article, poster, presentation" | split: ", " %}
+
+{% for pub_type in pub_types %}
+<h2>{{ pub_type | capitalize | append: "s" }}</h2>
+
+<div class="bib">
+<table>
+    <tbody>
+        {% for ref_id in site.data.biblist[pub_type] %}
+        {% assign ref = site.data.bib[ref_id] %}
+        <tr>
+            <td colspan="2">
+                <div>
+                    {% for author in ref.author %}
+                    {% assign last_name = author | split: ", " | first %}
+                    {% assign first_name = author | split: ", " | last %}
+                    {{ first_name }} {{ last_name }}{% unless forloop.last %},{% else %}.{% endunless %}
+                    {% endfor %}
+                    {{ ref.date }}.
+                    <strong>
+                        {{ ref.title | remove: lbrace | remove: rbrace | replace: '~', '&nbsp;' }}.
+                    </strong>
+                    {% assign event = ref.parent | where: "type", "conference" | first %}
+                    {% if event %}
+                    <br>{{ event.title | remove: lbrace | remove: rbrace | replace: '~', '&nbsp;' }}.
+                    {{ event.location | remove: lbrace | remove: rbrace | replace: '~', '&nbsp;' }}.
+                    {% else %}
+                    {% if ref.type == "manuscript" %}
+                    <i>preprint</i>
+                    {% endif %}
+                    {% endif %}
+                    <br>
+                    {% for serial in ref.serial-number %}
+                    {% case serial[0] %}
+                        {% when "hal" %}
+                            {% assign url = "https://hal.science/" | append: serial[1] %}
+                        {% when "doi" %}
+                            {% assign url = "https://doi.org/" | append: serial[1] %}
+                        {% else %}
+                            {% assign url = serial[1] %}
+                    {% endcase %}
+                    <a class="resource {{ serial[0] }}" href="{{ url }}" target="_blank">{{ serial[0] | upcase }}</a>
+                    {% endfor %}
+
+                    {% for resource in ref.note %}
+                    <a class="resource {{ resource.type }}" href="{{ resource.url }}" target="_blank">{{ resource.type | upcase }}</a>
+                    {% endfor %}
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endfor %}

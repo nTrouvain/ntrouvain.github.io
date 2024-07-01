@@ -1,0 +1,27 @@
+<header class="site-header" role="banner">
+  <div class="wrapper">
+      <nav class="site-nav">
+        {% for page in site.data.navigation %}
+        <!-- {% if page.role == "title" %}
+        {% assign link_class = "title-link" %}
+        {% else %}
+        {% assign link_class = "page-link" %}
+        {% endif %} -->
+        <div class="page-link">
+          <a id="{{ page.id }}" href="{{ site.baseurl }}{{ page.link }}">
+              {{ page.title | escape }}
+          </a>
+        </div>
+        {% endfor %}
+      </nav>
+  </div>
+</header>
+
+<script>
+$(document).ready(function(){
+  const loc = window.location.href;
+  let id = loc.substring(loc.lastIndexOf('/') + 1);
+  if (!id) { id = "home"; }
+  $("#"+id).addClass("active");
+});
+</script>

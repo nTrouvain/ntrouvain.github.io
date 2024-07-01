@@ -1,0 +1,18 @@
+- title: "Nathan Trouvain" 
+  link: /
+  role: title
+  id: home
+- title: "Resume"
+  link: /resume
+  id: resume
+- title: Publications
+  link: /publications
+  id: publications
+- title: "GitHub"
+  link: "https://github.com/ntrouvain"
+- title: "Resources"
+  link: "/resources"
+  id: resources
+- title: "Art"
+  link: "/art"
+  id: art

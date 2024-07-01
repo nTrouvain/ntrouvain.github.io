@@ -1,0 +1,219 @@
+hinaut2021hype:
+  type: article
+  title: 'Which {Hype} for {My New Task}? {Hints} and {Random Search} for {Echo State Networks Hyperparameters}'
+  author:
+  - Hinaut, Xavier
+  - Trouvain, Nathan
+  date: 2021
+  editor:
+  - Farkaš, Igor
+  - Masulli, Paolo
+  - Otte, Sebastian
+  - Wermter, Stefan
+  page-range: 83-97
+  url: https://hal.science/hal-03203318v2
+  serial-number:
+    doi: 10.1007/978-3-030-86383-8_7
+    pdf: hal-03203318v2
+  abstract: 'In learning systems, hyperparameters are parameters that are not learned but need to be set a priori. In Reservoir Computing, there are several parameters that needs to be set a priori depending on the task. Newcomers to Reservoir Computing cannot have a good intuition on which hyperparameters to tune and how to tune them. For instance, beginners often explore the reservoir sparsity, but in practice this parameter is not of high influence on performance for ESNs. Most importantly, many authors keep doing suboptimal hyperparameter searches: using grid search as a tool to explore more than two hyperparameters, while restraining the spectral radius to be below unity. In this short paper, we give some suggestions, intuitions, and give a general method to find robust hyperparameters while understanding their influence on performance. We also provide a graphical interface (included in ReservoirPy) in order to make this hyperparameter search more intuitive. Finally, we discuss some potential refinements of the proposed method.'
+  parent:
+  - type: proceedings
+    title: Artificial {Neural Networks} and {Machine Learning} – {ICANN} 2021
+    publisher: Springer International Publishing
+  - type: conference
+    title: '{ICANN} 2021'
+    location: Bratislava, Slovakia
+
+oota2023meg:
+  type: article
+  title: '{MEG Encoding} Using {Word Context Semantics} in {Listening Stories}'
+  author:
+  - Oota, Subba Reddy
+  - Trouvain, Nathan
+  - Alexandre, Frederic
+  - Hinaut, Xavier
+  date: 2023
+  page-range: 5152-5156
+  url: https://hal.science/hal-04148324v1
+  serial-number:
+    doi: 10.21437/Interspeech.2023-282
+    pdf: hal-04148324v1
+  abstract: Brain encoding is the process of mapping stimuli to brain activity. There is a vast literature on linguistic brain encoding for functional MRI (fMRI) related to syntactic and semantic representations. Magnetoencephalography (MEG), with higher temporal resolution than fMRI, enables us to look more precisely at the timing of linguistic feature processing. Unlike MEG decoding, few studies on MEG encoding using natural stimuli exist. Existing ones on story listening focus on phoneme and simple word-based features, ignoring more abstract features such as context, syntactic and semantic aspects. Inspired by previous fMRI studies, we study MEG brain encoding using basic syntactic and semantic features, with various context lengths and directions (past vs. future), for a dataset of 8 subjects listening to stories. We find that BERT representations predict MEG significantly but not other syntactic features or word embeddings (e.g. GloVe), allowing us to encode MEG in a distributed way across auditory and language regions in time. In particular, past context is crucial in obtaining significant results.
+  parent:
+  - type: proceedings
+    title: Proc. {Interspeech} 2023
+  - type: conference
+    title: '{INTERSPEECH} 2023'
+    location: Dublin, Ireland
+
+pagliarini2021canary:
+  type: manuscript
+  title: 'What Does the Canary Say? {Low-dimensional GAN} Applied to Birdsong'
+  author:
+  - Pagliarini, Silvia
+  - Trouvain, Nathan
+  - Leblois, Arthur
+  - Hinaut, Xavier
+  date: 2021
+  serial-number:
+    pdf: hal-03244723v2
+    code: https://github.com/ntrouvain/canarygan
+  url: https://hal.science/hal-03244723v2
+  abstract: The generation of speech, and more generally com- plex animal vocalizations, by artificial systems is a difficult problem. Generative Adversarial Networks (GANs) have shown very good abilities for generating images, and more recently sounds. While current GANs have high-dimensional latent spaces, complex vocalizations could in principle be generated through a low-dimensional latent space, easing the visualization and evaluation of latent representations. In this study, we aim to test the ability of a previously developed GAN, called WaveGAN, to reproduce canary syllables while drastically reducing the latent space dimension. We trained WaveGAN on a large dataset of canary syllables (16000 renditions of 16 different syllable types) and varied the latent space dimensions from 1 to 6. The sounds produced by the generator are evaluated using a RNN- based classifier. This quantitative evaluation is paired with a qualitative evaluation of the GAN productions across training epochs and latent dimensions. Altogether, our results show that a 3-dimensional latent space is enough to produce all syllable types in the repertoire with a quality often indistinguishable from real canary vocalizations. Importantly, we show that the 3-dimensional GAN generalizes by interpolating between the various syllable types. We rely on UMAP [1] to qualitatively show the similarities between training and generated data, and between the generated syllables and the interpolations produced. We discuss how our study may provide tools to train simple models of vocal production and/or learning. Indeed, while the RNN- based classifier provides a biologically realistic representation of the auditory network processing vocalizations, the small dimensional GAN may be used for the production of complex vocal repertoires.
+
+reddyoota2023neurofrance:
+  type: misc
+  title: Past Word Context Enables Better {MEG} Encoding Predictions than Current Word in Listening Stories
+  author:
+  - Reddy Oota, Subba
+  - Trouvain, Nathan
+  - Alexandre, Frédéric
+  - Hinaut, Xavier
+  date: 2023
+  url: https://inria.hal.science/hal-04154794
+  abstract: 'Brain encoding is the process of mapping stimuli to brain activity. There is a vast literature on linguistic brain encoding for functional MRI (fMRI) related to syntactic and semantic representations. Magnetoencephalography (MEG), with higher temporal resolution than fMRI, enables us to look more precisely at the timing of linguistic feature processing. Unlike MEG decoding, few studies on MEG encoding using natural stimuli exist. Existing ones on story listening focus on phoneme and simple word-based features, ignoring more abstract features such as context, syntactic and semantic aspects. Inspired by previous fMRI studies, we study MEG brain encoding using basic syntactic and semantic features, with various context lengths and directions (past vs. future), for a dataset of 8 subjects listening to stories (Gwilliams et al. arXiv 2022). We find that BERT representations are significant but not other syntactic features or word embeddings (e.g. GloVe), allowing us to encode MEG in a distributed way across auditory and language regions in time. In particular, past context is crucial in obtaining significant results. This suggests that the "word encoding center of mass" is few words behind the current word, as if the brain would wait for more future context before encoding "fully" the word, or similarly that the current representation of the incoming word is encoded in a transient representation that is changing until the next words come in. This is coherent with previous studies that showed that the several past phonemes information (position-invariant code for content and order) are kept in memory (Gwilliams et al. 2022), and that current incoming word lexical information is retrieved in a context sensitive manner (rather then using the most probable lexical category of the word) (Gwilliams et al. 2023). HVC are of canaries, the brain area managing long-time dependencies in song production, preferentially encodes past actions rather than future actions: specific neuron populations preferencially encoding past actions were actually more active during the rare phrases that involve history-dependent transitions in song (Cohen et al. 2020). This is also coherent with the results of (Gwilliams et al. 2022) where phoneme representations are sustained longer when lexical identity is uncertain. Overall, it seems that the representations of past events or actions are kept in memory until they have been used to disambiguate future events/actions.'
+  serial-number:
+    pdf: hal-04154794
+  parent: 
+    - type: conference
+      title: '{NeuroFrance} 2023'
+      location: '{Lyon}, {France}'
+
+trouvain2023sprint:
+  type: misc
+  title: 'ReservoirPy sprint: Amélioration de ReservoirPy, un outil simple de reservoir computing'
+  author:
+  - Trouvain, Nathan
+  - Das, Deepayan
+  - Hinaut, Xavier
+  date: 2023
+  url: https://hal.science/hal-04401731v1
+  abstract: En février 2023, un projet de deux jours mené par Xavier Hinaut et Nathan Trouvain de l'équipe Mnemosyne de l'Inria s'est concentré sur la présentation du Reservoir Computing, de Reservoirpy (un outil Python pour le Reservoir Computing) et de ses fonctionalités, suivi d'un sprint ayant pour but l'amélioration de reservoirpy. Ce sprint a impliqué diverses activités telles que la refactorisation, la documentation, et le test de l'intégration de nouvelles méthodes de RC. L'objectif était d'augmenter l'accessibilité et la fonctionnalité de reservoirpy dans l'écosystème scientifique Python. Les participants ont eu l'opportunité de s'engager à différents niveaux, allant de la contribution à la documentation à l'amélioration des fonctionalités. Hinaut est chargé de recherche à Inria Bordeaux Sud-Ouest depuis 2016, dans l'équipe Mnemosyne (Neurosciences Computionnelles). Il a soutenu son doctorat à l'Université de Lyon en 2013. Il utilise le Reservoir Computing dans ses recherches depuis une dizaine d'années, il enseigne sur ces thématiques depuis plusieurs années, à Bordeaux et à Hambourg (Allemagne) notamment. Ses thématiques de recherches sont liées à la modélisation du traitement, de l'apprentissage et de la production de séquences dans le cerveau, notamment le langage et les chants d'oiseaux. Il modélise également certaines fonctions cognitives de haut niveau (comme la mémoire de travail) et applique ses modèles de langage aux interactions homme-robot dans la perspective d'ancrer le langage à travers l'interaction du robot avec le monde réel.
+  parent:
+    - type: conference
+      title: '{PyConFR} 2023'
+      location: Bordeaux, France
+  note:
+    - type: event
+      url: https://www.pycon.fr/2023/en/talks/sprint.html#amelioration-de-reservoirpy-un
+
+trouvain2021canary:
+  type: article
+  title: 'Canary {Song Decoder}: {Transduction} and {Implicit Segmentation} with {ESNs} and {LTSMs}'
+  author:
+  - Trouvain, Nathan
+  - Hinaut, Xavier
+  date: 2021
+  editor:
+  - Farkaš, Igor
+  - Masulli, Paolo
+  - Otte, Sebastian
+  - Wermter, Stefan
+  page-range: 71–82
+  url: https://hal.science/hal-03203374v2
+  serial-number:
+    doi: 10.1007/978-3-030-86383-8_6
+    pdf: hal-03203374v2
+    code: https://github.com/birds-canopy/canary-decoder-esn-lstm
+  abstract: Domestic canaries produce complex vocal patterns embedded in various levels of abstraction. Studying such temporal organization is of particular relevance to understand how animal brains represent and process vocal inputs such as language. However, this requires a large amount of annotated data. We propose a fast and easy-to-train transducer model based on RNN architectures to automate parts of the annotation process. This is similar to a speech recognition task. We demonstrate that RNN architectures can be efficiently applied on spectral features (MFCC) to annotate songs at time frame level and at phrase level. We achieved around 95% accuracy at frame level on particularly complex canary songs, and ESNs achieved around \$\$5\\%\$\$5%of word error rate (WER) at phrase level. Moreover, we are able to build this model using only around 13 to 20 min of annotated songs. Training time takes only 35~s using 2~h and 40~min of data for the ESN, allowing to quickly run experiments without the need of powerful hardware.
+  parent:
+  - type: proceedings
+    title: Artificial {Neural Networks} and {Machine Learning} – {ICANN} 2021
+    publisher: Springer International Publishing
+  - type: conference
+    title: '{ICANN} 2021'
+    location: Bratislava, Slovakia
+
+
+trouvain2022sab:
+  type: article
+  title: Create {Efficient} and~{Complex Reservoir Computing Architectures} with~{ReservoirPy}
+  author:
+  - Trouvain, Nathan
+  - Rougier, Nicolas
+  - Hinaut, Xavier
+  date: 2022
+  editor:
+  - Cañamero, Lola
+  - Gaussier, Philippe
+  - Wilson, Myra
+  - Boucenna, Sofiane
+  - Cuperlier, Nicolas
+  page-range: 91–102
+  url: https://hal.science/hal-03761440v1
+  serial-number:
+    doi: 10.1007/978-3-031-16770-6_8
+    pdf: hal-03761440v1
+  abstract: Reservoir Computing (RC) is a type of recurrent neural network (RNNs) where learning is restricted to the output weights. RCs are often considered as temporal Support Vector Machines (SVMs) for the way they project inputs onto dynamic non-linear high-dimensional representations. This paradigm, mainly represented by Echo State Networks (ESNs), has been successfully applied on a wide variety of tasks, from time series forecasting to sequence generation. They offer de facto a fast, simple yet efficient way to train RNNs.
+  parent:
+  - type: proceedings
+    title: From {Animals} to {Animats} 16
+    publisher: Springer International Publishing
+  - type: conference
+    title: '{SAB} 2022'
+    location: Cergy-Pontoise / Hybrid, France
+
+
+trouvain2022scai:
+  type: misc
+  title: 'Reservoir Computing : de la théorie à la pratique avec ReservoirPy'
+  author: Trouvain, Nathan
+  date: 2022
+  url: https://sed-paris.gitlabpages.inria.fr/ai-community/slides/2022-03-22/SCAI-ReservoirPy_01.pdf
+  abstract: 'De la météo au langage, extraire l’information de flux de données est un enjeu primordial en Intelligence Artificielle. Le Reservoir Computing (RC) est particulièrement adapté pour bien prendre en compte ces dynamiques temporelles. C’est un paradigme d’apprentissage automatique sur des données séquentielles où un réseau de neurones artificiel n’est que partiellement entrainé. Un des intérêts majeurs de ces réseaux de neurones récurrents est leur coût computationnel réduit et la possibilité d’apprendre aussi bien “en-ligne” que “hors-ligne”. Cette intervention expose ReservoirPy : une bibliothèque Python à la fois simple et efficace basée sur la pile logicielle scientifique de Python. ReservoirPy met l’accent sur les Echo State Networks (ESN), l’instance la plus connue dediée au Reservoir Computing.'
+  parent:
+    - type: conference
+      title: '{AI-DevTalks}'
+      location: '{Sorbonne Center for Articifial Intelligence (SCAI)}, {Paris}, {France}'
+  note:
+    - type: video
+      url: https://sed.paris.inria.fr/ai-dev-talks/videos/AI_DevTalk_22-03-22.mp4
+    - type: slides
+      url: https://sed-paris.gitlabpages.inria.fr/ai-community/slides/2022-03-22/SCAI-ReservoirPy_01.pdf
+
+
+trouvain2022dataquitaine:
+  type: misc
+  title: 'Reservoir Computing : traitement efficace de séries temporelles avec ReservoirPy'
+  author:
+  - Trouvain, Nathan
+  - Hinaut, Xavier
+  date: 2022
+  url: https://www.youtube.com/watch?v=CDzQ9giWTCs
+  abstract: De la météo au langage, extraire l’information véhiculée dans le temps est un enjeu primordial en intelligence artificielle. Le Reservoir Computing est une technique mettant en œuvre des réseaux de neurones récurrents pour répondre aux problématiques posées par ces dynamiques temporelles. Au cours de cette introduction seront présentés les avantages de cette méthode face à d’autres méthodes de deep learning, ainsi que plusieurs applications dans divers domaines, des neurosciences au traitement de données chaotiques.
+  parent:
+    - type: conference
+      title: '{Dataquitaine} 2022'
+      location: '{Bordeaux}, {France}'
+  note:
+    - type: video
+      url: https://www.youtube.com/watch?v=CDzQ9giWTCs
+
+
+trouvain2020reservoirpy:
+  type: article
+  title: '{ReservoirPy}: {An Efficient} and {User-Friendly Library} to {Design Echo State Networks}'
+  author:
+  - Trouvain, Nathan
+  - Pedrelli, Luca
+  - Dinh, Thanh Trung
+  - Hinaut, Xavier
+  date: 2020
+  editor:
+  - Farkaš, Igor
+  - Masulli, Paolo
+  - Wermter, Stefan
+  page-range: 494–505
+  url: https://hal.science/hal-02595026v2
+  serial-number:
+    doi: 10.1007/978-3-030-61616-8_40
+    pdf: hal-02595026v2
+    code: https://github.com/reservoirpy/reservoirpy
+  abstract: We present a simple user-friendly library called ReservoirPy based on Python scientific modules. It provides a flexible interface to implement efficient Reservoir Computing (RC) architectures with a particular focus on Echo State Networks (ESN). Advanced features of ReservoirPy allow to improve up~to \$\$87.9\\%\$\$of computation time efficiency on a simple laptop compared to basic Python implementation. Overall, we provide tutorials for hyperparameters tuning, offline and online training, fast spectral initialization, parallel and sparse matrix computation on various tasks (MackeyGlass and audio recognition tasks). In particular, we provide graphical tools to easily explore hyperparameters using random search with the help of the hyperopt library.
+  parent:
+  - type: proceedings
+    title: Artificial {Neural Networks} and {Machine Learning} – {ICANN} 2020
+    publisher: Springer International Publishing
+  - type: conference
+    title: '{ICANN} 2020'
+    location: Bratislava, Slovakia
