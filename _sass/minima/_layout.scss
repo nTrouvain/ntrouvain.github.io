@@ -26,6 +26,34 @@
   }
 }
 
+.header-align {
+  padding-top: auto;
+  padding-bottom: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.self-image {
+  float: left;
+  width: max(50px, 15vh);
+  height: max(50px, 15vh);
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+
+  img {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+  }
+
+  @include media-query($on-palm) {
+      display: none;
+  }
+
+}
+
 
 /**
  * Site footer

@@ -1,5 +1,10 @@
 <header class="site-header" role="banner">
   <div class="wrapper">
+    <div class="header-align">
+      <div class="self-image">
+        <img src="assets/self@200.png"/>
+      </div>
+      <br>
       <nav class="site-nav">
         {% for page in site.data.navigation %}
         <!-- {% if page.role == "title" %}
@@ -9,19 +14,20 @@
         {% endif %} -->
         <div class="page-link">
           <a id="{{ page.id }}" href="{{ site.baseurl }}{{ page.link }}">
-              {{ page.title | escape }}
+            {{ page.title | escape }}
           </a>
         </div>
         {% endfor %}
       </nav>
+    </div>
   </div>
 </header>
 
 <script>
-$(document).ready(function(){
-  const loc = window.location.href;
-  let id = loc.substring(loc.lastIndexOf('/') + 1);
-  if (!id) { id = "home"; }
-  $("#"+id).addClass("active");
-});
+  $(document).ready(function () {
+    const loc = window.location.href;
+    let id = loc.substring(loc.lastIndexOf('/') + 1);
+    if (!id) { id = "home"; }
+    $("#" + id).addClass("active");
+  });
 </script>
