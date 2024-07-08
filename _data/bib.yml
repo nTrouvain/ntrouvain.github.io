@@ -157,7 +157,9 @@ trouvain2022sab:
 trouvain2022scai:
   type: misc
   title: 'Reservoir Computing : de la théorie à la pratique avec ReservoirPy'
-  author: Trouvain, Nathan
+  author:
+    - Trouvain, Nathan
+    - Hinaut, Xavier
   date: 2022
   url: https://sed-paris.gitlabpages.inria.fr/ai-community/slides/2022-03-22/SCAI-ReservoirPy_01.pdf
   abstract: 'De la météo au langage, extraire l’information de flux de données est un enjeu primordial en Intelligence Artificielle. Le Reservoir Computing (RC) est particulièrement adapté pour bien prendre en compte ces dynamiques temporelles. C’est un paradigme d’apprentissage automatique sur des données séquentielles où un réseau de neurones artificiel n’est que partiellement entrainé. Un des intérêts majeurs de ces réseaux de neurones récurrents est leur coût computationnel réduit et la possibilité d’apprendre aussi bien “en-ligne” que “hors-ligne”. Cette intervention expose ReservoirPy : une bibliothèque Python à la fois simple et efficace basée sur la pile logicielle scientifique de Python. ReservoirPy met l’accent sur les Echo State Networks (ESN), l’instance la plus connue dediée au Reservoir Computing.'

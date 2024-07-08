@@ -1,0 +1,103 @@
+{% assign section = include.section %}
+
+<div class="resume">
+    <table>
+        <tbody>
+            {% for item in site.data.resume[section] %}
+            <tr>
+                {% if item.year %}
+                <td class="exp-date" colspan="1">
+                    <p>
+                        {% if item.year contains "-" %}
+                        {% assign start = item.year | split: "-" | first %}
+                        {% assign end = item.year | split: "-" | last %}
+                        {{ start }}
+                        <br>
+                        {{ end }}
+                        {% else %}
+                        {{ item.year }}
+                        {% endif %}
+                    </p>
+                    <!-- Workplace -->
+                    {% if item.workplace %}
+                    <small>
+                        <p>
+                        {{ item.workplace.location | split: "," | first }}
+                        <br>
+                        {{ item.workplace.location | split: "," | last }}
+                        </p>
+                    </small>
+                    {% endif %}
+                </td>
+                {% endif %}
+                <td colspan="1" class="exp-content">
+                    <strong>
+                        {{ item.title }}
+                    </strong>
+
+                    {% if item.workplace %}
+                    <i>
+                        @ {{ item.workplace.name }}
+                    </i>
+                    {% endif %}
+
+                    {% if item.desc %}
+                    <br>
+                    <strong> > </strong> {{ item.desc }}
+                    {% endif %}
+
+                    <!-- Extended description -->
+                    {% if item.content %}
+                    <br>
+                    <small>{{ item.content }}</small>
+                    {% endif %}
+
+                    <!-- Software links -->
+                    {% if section == "software" %}
+                    <br>
+                    {% for link in item.links %}
+                    <a class="resource {{ link[0] }}" href="{{ link[1] }}" target="_blank">{{ link[0] | upcase }}</a>
+                    {% endfor %}
+                    {% endif %}
+
+                    <!-- Education major/minor -->
+                    {% if section == "education" %}
+                    <table class="edu-skills">
+                        {% if item.major %}
+                        <tr>
+                            <td>
+                                <strong>
+                                    Major:
+                                </strong>
+                            </td>
+                            <td>
+                                {% for major in item.major %}
+                                <div id="{{ major.id }}"> {{ major.name }} </div>
+                                {% endfor %}
+                            </td>
+                        </tr>
+                        {% endif %}
+
+                        {% if item.minor %}
+                        <tr class="edu-skills-row">
+                            <td>
+                                <strong>
+                                    Minor:
+                                </strong>
+                            </td>
+                            <td>
+                                {% for minor in item.minor %}
+                                <div id="{{ minor.id }}"> {{ minor.name }} </div>
+                                {% endfor %}
+                            </td>
+                        </tr>
+                        {% endif %}
+                    </table>
+                    {% endif %}
+
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

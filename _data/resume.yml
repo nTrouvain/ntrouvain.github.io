@@ -1,0 +1,127 @@
+education:
+  - year: 2020
+    title: Master degree - "Diplôme d'ingénieur"
+    workplace: 
+      name: 'Ecole Nationale Supérieure de Cognitique (ENSC)'
+      location: 'Talence, France'
+    major: 
+      - name: "Machine Learning"
+        id: ml
+      - name: "Computer Sc."
+        id : cs
+    minor: 
+      - name: "Cognitive Sc."
+        id : cog
+
+  - year: 2017
+    title: '"Classe préparatoire aux grandes écoles"'
+    workplace:
+      name: 'Toulouse INP'
+      location: 'Toulouse, France'
+    major: 
+      - name: "Biology"
+        id: bio
+    minor:
+      - name: "Mathematics"
+        id: maths
+      - name: "Physics"
+        id : phy
+
+research:
+  - year: 2022-2024
+    title: PhD. research project
+    desc: Modelling Action-Perception Mechanisms for Vocal Gestures with Hierarchical Reservoirs
+    workplace:
+      name: Inria/IMN/LaBRI
+      location: Bordeaux, France
+    content: >
+        Computational neuroscience research project, aiming at modelizing vocal perception and
+        production in songbirds, and eventually in humans.
+
+  - year: 2020
+    title: Research internship
+    desc: ML based automated annotation pipeline for bird songs
+    workplace:
+      name: Inria/IMN/LaBRI
+      location: Bordeaux, France
+    content: >
+      Development of an automatic birdsong annotation pipeline using machine learning tools
+      (Reservoir Computing).
+    
+engineering:
+  - year: 2020-2022
+    title: Research engineer
+    desc: Open source software development for Reservoir Computing
+    workplace:
+      name: Inria/IMN/LaBRI
+      location: Bordeaux, France
+    content: >
+      Development of <i>reservoirpy</i>, a Python library aimed at providing standardized Reservoir
+      Computing tools. Software architecture, tests, documentation, deployment, 
+      public outreach (presentations, tutorials and scientific papers.)
+  
+  - year: 2019
+    title: Engineering internship
+    desc: Building NLP tools for a multipurpose chatbot
+    workplace: 
+      name: Wiidii
+      location: Bordeaux, France
+    content: >
+      NLP models (BERT, Flair) fine-tuning for intent categorization and named entity recognition (NER).
+      Model serving within company micro-service architecture.
+
+teaching:
+  - year: 2021-2024
+    title: Teaching assistant
+    desc: Timeseries analysis and modelization
+    workplace:
+      name: ENSC/ENSEIRB-MATMECA
+      location: Talence, France
+    content: > 
+      Master 2 students. Theoretical and practical courses.
+      Timeseries decomposition and modelization, auto-regressive 
+      and state-space models basics,
+      recurrent neural networks.
+
+  - year: 2021-2024
+    title: Teaching assistant
+    desc: Machine Learning
+    workplace:
+      name: ENSC
+      location: Talence, France
+    content: >
+      Master 1 students. Practical courses. Supervised and 
+      unsupervised learning methods basics, ML-powered 
+      data analysis, deep learning basics.
+
+services:
+  - year: 2023
+    title: Organizer
+    desc: Open Science Workshop
+
+  - year: 2021-2024
+    title: Workshop assistant
+    desc: AI4Industry
+    
+  - year: 2021-2024
+    title: Reviewer
+    desc: TODO
+
+software:
+  - title: reservoirpy
+    links:
+      github: https://github.com/reservoirpy/reservoirpy
+      doc: https://reservoirpy.readthedocs.io/en/latest/?badge=latest
+      pypi: https://pypi.org/project/reservoirpy/
+    desc: >
+      A simple and flexible code for Reservoir Computing architectures like Echo State Networks.
+
+  - title: canapy
+    links:
+      github: https://github.com/birds-canopy/canapy
+    desc: Automatic audio annotation tools for animal vocalizations.
+
+  - title: canarygan
+    links:
+      github: https://github.com/nTrouvain/canarygan
+    desc: A Pytorch+Lightning reimplementation of Pagliarini et al. (2021) "What does the Canary Say? Low-Dimensional GAN Applied to Birdsong".

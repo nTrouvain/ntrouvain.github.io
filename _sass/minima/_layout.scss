@@ -61,29 +61,30 @@
 
 .footer-col-1 {
   width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-  width:         calc(35% - (#{$spacing-unit} / 2));
+  width: calc(35% - (#{$spacing-unit} / 2));
 }
 
 .footer-col-2 {
   width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-  width:         calc(20% - (#{$spacing-unit} / 2));
+  width: calc(20% - (#{$spacing-unit} / 2));
 }
 
 .footer-col-3 {
   width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-  width:         calc(45% - (#{$spacing-unit} / 2));
+  width: calc(45% - (#{$spacing-unit} / 2));
 }
 
 @include media-query($on-laptop) {
+
   .footer-col-1,
   .footer-col-2 {
     width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-    width:         calc(50% - (#{$spacing-unit} / 2));
+    width: calc(50% - (#{$spacing-unit} / 2));
   }
 
   .footer-col-3 {
     width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-    width:         calc(100% - (#{$spacing-unit} / 2));
+    width: calc(100% - (#{$spacing-unit} / 2));
   }
 }
 
@@ -91,7 +92,7 @@
   .footer-col {
     float: none;
     width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-    width:         calc(100% - (#{$spacing-unit} / 2));
+    width: calc(100% - (#{$spacing-unit} / 2));
   }
 }
 
@@ -117,7 +118,7 @@
   margin-left: 0;
   list-style: none;
 
-  > li {
+  >li {
     margin-bottom: $spacing-unit;
   }
 }
@@ -187,10 +188,15 @@
 .bib {
   table {
     all: revert;
-    th, td, tr {
+
+    th,
+    td,
+    tr {
       all: revert;
     }
-    th, td {
+
+    th,
+    td {
       padding: ($spacing-unit / 6) ($spacing-unit / 2);
     }
   }
@@ -203,25 +209,28 @@ a.resource {
   text-decoration: none;
   font-size: $small-font-size;
   border-radius: $spacing-unit * 0.3;
-  padding-left:  $spacing-unit * 0.3;
-  padding-right:  $spacing-unit * 0.3;
+  padding-left: $spacing-unit * 0.3;
+  padding-right: $spacing-unit * 0.3;
+  transition: all ease-out 0.2s;
 
   &:not(:last-child) {
     margin-right: $spacing-unit * 0.1;
   }
 
-  &.pdf { 
+  &.pdf {
     border-color: olivedrab;
     color: olivedrab;
+
     &:hover {
       background-color: olivedrab;
       color: white;
     }
   }
 
-  &.doi { 
+  &.doi {
     border-color: goldenrod;
     color: goldenrod;
+
     &:hover {
       background-color: goldenrod;
       color: white;
@@ -231,6 +240,7 @@ a.resource {
   &.code {
     border-color: SteelBlue;
     color: SteelBlue;
+
     &:hover {
       background-color: steelblue;
       color: white;
@@ -240,6 +250,7 @@ a.resource {
   &.video {
     border-color: Crimson;
     color: Crimson;
+
     &:hover {
       background-color: crimson;
       color: white;
@@ -249,6 +260,7 @@ a.resource {
   &.slides {
     border-color: Sienna;
     color: Sienna;
+
     &:hover {
       background-color: sienna;
       color: white;
@@ -258,9 +270,176 @@ a.resource {
   &.event {
     border-color: SandyBrown;
     color: SandyBrown;
+
     &:hover {
       background-color: sandybrown;
       color: white;
     }
+  }
+
+  &.github {
+    border-color: steelblue;
+    color: steelblue;
+
+    &:hover {
+      background-color: steelblue;
+      color: white;
+    }
+  }
+
+  &.doc {
+    border-color: olivedrab;
+    color: olivedrab;
+
+    &:hover {
+      background-color: olivedrab;
+      color: white;
+    }
+
+  }
+
+  &.pypi {
+    border-color: goldenrod;
+    color: goldenrod;
+
+    &:hover {
+      background-color: goldenrod;
+      color: white;
+    }
+  }
+}
+
+
+/**
+ * Resume
+ */
+.resume {
+  table {
+    all: revert;
+    table-layout: fixed;
+    width: 100%;
+    border-spacing: 0 $spacing-unit;
+
+    th,
+    td,
+    tr {
+      all: revert;
+    }
+
+    td {
+      vertical-align: top;
+      
+      &.exp-content {
+        padding: 0rem 0 1rem 1rem;
+      }
+
+      &.exp-date {
+        text-align: right;
+        color: $grey-color-dark;
+        font-size: $small-font-size;
+        border-right: 1px solid;
+        padding: 0rem 0.5rem 1rem 0;
+        text-align: right;
+      }
+
+      &:nth-child(1) {
+        width: 1vw;
+      }
+
+      &:nth-child(2) {
+        width: 9vw;
+      }
+    }
+  }
+}
+
+.edu-skills {
+  float: left;
+
+  div {
+    float: left;
+    border: 1px solid;
+    color: $grey-color-dark;
+    font-size: $small-font-size;
+    border-radius: $spacing-unit * 0.3;
+    padding-left: $spacing-unit * 0.2;
+    padding-right: $spacing-unit * 0.2;
+    margin-top: $spacing-unit * 0.05;
+    margin-bottom: $spacing-unit * 0.05;
+
+    &:not(:last-child) {
+      margin-right: $spacing-unit * 0.1;
+    }
+
+    &#cs {
+      border-color: olivedrab;
+      color: olivedrab;
+    }
+
+    &#cog {
+      border-color: Coral;
+      color: Coral;
+    }
+
+    &#bio {
+      border-color: green;
+      color: green;
+    }
+
+    &#ml {
+      border-color: crimson;
+      color: crimson;
+    }
+
+    &#maths {
+      border-color: CornflowerBlue;
+      color: CornflowerBlue;
+    }
+
+    &#phy {
+      border-color: steelblue;
+      color: steelblue;
+    }
+
+  }
+
+}
+
+table.edu-skills {
+  border-spacing: 0px;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+
+  td:nth-child(1) {
+    width: 1vw;
+  }
+
+  td:nth-child(2) {
+    width: 3vw;
+  }
+}
+
+.software-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+
+  @include media-query($on-palm) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.software-card {
+  border: 1px solid $grey-color-dark;
+  border-radius: 20px;
+  padding: 5%;
+  transition: background-color ease-out 0.5s,
+              border-color ease-out 0.5s;
+
+  &:hover {
+    background-color: burlywood;
+    border-color: #ffff;
   }
 }
