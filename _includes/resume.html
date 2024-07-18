@@ -53,7 +53,7 @@
                     {% endif %}
 
                     <!-- Software links -->
-                    {% if section == "software" %}
+                    {% if item.links %}
                     <br>
                     {% for link in item.links %}
                     <a class="resource {{ link[0] }}" href="{{ link[1] }}" target="_blank">{{ link[0] | upcase }}</a>

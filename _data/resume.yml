@@ -97,15 +97,19 @@ teaching:
 services:
   - year: 2023
     title: Organizer
-    desc: Open Science Workshop
+    desc: 1st Open Science Workshop - Bordeaux Neurocampus
+    links:
+      event: https://bordeaux-neurocampus.github.io/OS-Workshop-2023/
 
   - year: 2021-2024
-    title: Workshop assistant
-    desc: AI4Industry
+    title: Mentor - scientific advisor
+    desc: AI4Industry workshop
+    links:
+      event: https://www.ai4industry.fr/
     
-  - year: 2021-2024
-    title: Reviewer
-    desc: TODO
+  # - year: 2021-2024
+  #   title: Reviewer
+  #   desc: TODO
 
 software:
   - title: reservoirpy
