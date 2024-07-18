@@ -7,39 +7,19 @@
 }
 
 .site-nav {
-  float: right;
-  line-height: $base-line-height * $base-font-size;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.page-link {
-  float: left;
-  color: $text-color;
-  line-height: $base-line-height;
-
-  &:not(:last-child) {
-    margin-right: 20px;
-  }
-
-  // Current page being displayed
-  .active {
-    font-weight: bold;
-  }
-}
-
-.header-align {
-  padding-top: auto;
-  padding-bottom: auto;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-.self-image {
-  float: left;
-  width: max(50px, 15vh);
-  height: max(50px, 15vh);
-  position: relative;
+.nav-logo {
+  display: flex;
+  flex: 1 0 1;
+  max-width: 200px;
+  max-height: 200px;
   overflow: hidden;
   border-radius: 50%;
+  margin-bottom: 3%;
 
   img {
     display: inline;
@@ -47,11 +27,46 @@
     height: 100%;
     width: auto;
   }
+}
 
-  @include media-query($on-palm) {
-      display: none;
+.nav-elements {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: flex-start;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+
+.nav-item {
+  color: $text-color;
+  font-size: 1.3em;
+
+  &:not(:last-child) {
+    margin-right: 20px;
   }
 
+  @media (max-width: 800px) {
+    margin-top: 20px;
+  }
+
+  &.title {
+    font-size: 1.8em;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  // Current page being displayed
+  a.active {
+    font-weight: bold;
+  }
 }
 
 

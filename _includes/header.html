@@ -1,25 +1,22 @@
 <header class="site-header" role="banner">
   <div class="wrapper">
-    <div class="header-align">
-      <div class="self-image">
-        <img src="assets/self@200.png"/>
-      </div>
-      <br>
       <nav class="site-nav">
+        <div class="nav-logo">
+          <img src="assets/self@200.png"/>
+        </div>
+        <div class="nav-elements">
         {% for page in site.data.navigation %}
-        <!-- {% if page.role == "title" %}
-        {% assign link_class = "title-link" %}
-        {% else %}
-        {% assign link_class = "page-link" %}
-        {% endif %} -->
-        <div class="page-link">
-          <a id="{{ page.id }}" href="{{ site.baseurl }}{{ page.link }}">
+        <div class="nav-item {{ page.role }}">
+          <a
+          id="{{ page.id }}" 
+          href="{{ site.baseurl }}{{ page.link }}"
+          >
             {{ page.title | escape }}
           </a>
         </div>
         {% endfor %}
+      </div>
       </nav>
-    </div>
   </div>
 </header>
 
@@ -27,7 +24,7 @@
   $(document).ready(function () {
     const loc = window.location.href;
     let id = loc.substring(loc.lastIndexOf('/') + 1);
-    if (!id) { id = "home"; }
+    if (!id) { id = "home"; } // root url => home
     $("#" + id).addClass("active");
   });
 </script>
