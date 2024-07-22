@@ -22,9 +22,9 @@
 
 <script>
   $(document).ready(function () {
-    const loc = window.location.href;
-    let id = loc.substring(loc.lastIndexOf('/') + 1);
-    if (!id) { id = "home"; } // root url => home
-    $("#" + id).addClass("active");
+    const here = window.location.href;
+    let page_id = here.substring(here.lastIndexOf('/') + 1);
+    if (!page_id) { page_id = "home"; } // root url => home
+    $("#" + page_id).addClass("active");
   });
 </script>

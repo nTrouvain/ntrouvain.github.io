@@ -1,131 +1,255 @@
-education:
-  - year: 2020
-    title: Master degree - "Diplôme d'ingénieur"
-    workplace: 
-      name: 'Ecole Nationale Supérieure de Cognitique (ENSC)'
-      location: 'Talence, France'
-    major: 
-      - name: "Machine Learning"
-        id: ml
-      - name: "Computer Sc."
-        id : cs
-    minor: 
-      - name: "Cognitive Sc."
-        id : cog
+# yaml-language-server: $schema=https://json.schemastore.org/yamllint.json
 
-  - year: 2017
-    title: '"Classe préparatoire aux grandes écoles"'
-    workplace:
-      name: 'Toulouse INP'
-      location: 'Toulouse, France'
-    major: 
-      - name: "Biology"
-        id: bio
-    minor:
-      - name: "Mathematics"
-        id: maths
-      - name: "Physics"
-        id : phy
+# Resume data file.
+# English and French.
+sections:
+  - name: education
+    title:
+      en: Education
+      fr: Éducation
+    content:
+      - year: 2020
+        title:
+          en: Master degree - "Diplôme d'ingénieur"
+          fr: Diplôme d'ingénieur (grade Master II)
+        workplace:
+          name: "École Nationale Supérieure de Cognitique (ENSC)"
+          location: "Talence, France"
+        major:
+          - name:
+              en: "Machine Learning"
+              fr: "<i>Machine Learning</i>"
+            id: ml
+          - name:
+              en: "Computer Sc."
+              fr: "Informatique"
+            id: cs
+        minor:
+          - name:
+              en: "Cognitive Sc."
+              fr: "Sciences Cog."
+            id: cog
+      - year: 2017
+        title:
+          en: '"Classe préparatoire aux grandes écoles"'
+          fr: Classe préparatoire
+        workplace:
+          name: "Toulouse INP"
+          location: "Toulouse, France"
+        major:
+          - name:
+              en: "Biology"
+              fr: Biologie
+            id: bio
+        minor:
+          - name:
+              en: "Mathematics"
+              fr: Mathématiques
+            id: maths
+          - name:
+              en: "Physics"
+              fr: Physique
+            id: phy
 
-research:
-  - year: 2022-2024
-    title: PhD. research project
-    desc: Modelling Action-Perception Mechanisms for Vocal Gestures with Hierarchical Reservoirs
-    workplace:
-      name: Inria/IMN/LaBRI
-      location: Bordeaux, France
-    content: >
-        Computational neuroscience research project, aiming at modelizing vocal perception and
-        production in songbirds, and eventually in humans.
+  - name: research
+    title:
+      en: Research experience
+      fr: Expérience de recherche
+    content:
+      - year: 2022-2024
+        title:
+          en: PhD. research project
+          fr: Doctorant
+        desc:
+          en: Modelling Action-Perception Mechanisms for Vocal Gestures with Hierarchical Reservoirs
+          fr: Modélisation des mécanismes d'action-perception pour les gestes vocaux à l'aide de reservoirs de neurones hiérarchiques
+        workplace:
+          name: Inria/IMN/LaBRI
+          location: Bordeaux, France
+        content:
+          en: >
+            Computational neuroscience research project, aiming at modelizing vocal perception and
+            production in songbirds, and eventually in humans.
+          fr: >
+            Projet de recherche en neurosciences computationnelles, visant à modéliser la perception 
+            et la production vocale chez les oiseaux chanteurs, et à terme chez l'humain.
 
-  - year: 2020
-    title: Research internship
-    desc: ML based automated annotation pipeline for bird songs
-    workplace:
-      name: Inria/IMN/LaBRI
-      location: Bordeaux, France
-    content: >
-      Development of an automatic birdsong annotation pipeline using machine learning tools
-      (Reservoir Computing).
-    
-engineering:
-  - year: 2020-2022
-    title: Research engineer
-    desc: Open source software development for Reservoir Computing
-    workplace:
-      name: Inria/IMN/LaBRI
-      location: Bordeaux, France
-    content: >
-      Development of <i>reservoirpy</i>, a Python library aimed at providing standardized Reservoir
-      Computing tools. Software architecture, tests, documentation, deployment, 
-      public outreach (presentations, tutorials and scientific papers.)
-  
-  - year: 2019
-    title: Engineering internship
-    desc: Building NLP tools for a multipurpose chatbot
-    workplace: 
-      name: Wiidii
-      location: Bordeaux, France
-    content: >
-      NLP models (BERT, Flair) fine-tuning for intent categorization and named entity recognition (NER).
-      Model serving within company micro-service architecture.
+      - year: 2020
+        title:
+          en: Research internship
+          fr: Stage de fin d'étude
+        desc:
+          en: ML based automated annotation pipeline for bird songs
+          fr: Outils logiciels d'annotation automatique de chants d'oiseaux
+        workplace:
+          name: Inria/IMN/LaBRI
+          location: Bordeaux, France
+        content:
+          en: >
+            Development of an automatic birdsong annotation pipeline using machine learning tools
+            (Reservoir Computing).
+          fr: >
+            Developpement d'outils d'annotation automatique de chants d'oiseaux basés sur des 
+            méthodes d'apprentissage automatique (<i>machine learning</i>; <i>Reservoir Computing</i>).
 
-teaching:
-  - year: 2021-2024
-    title: Teaching assistant
-    desc: Timeseries analysis and modelization
-    workplace:
-      name: ENSC/ENSEIRB-MATMECA
-      location: Talence, France
-    content: > 
-      Master 2 students. Theoretical and practical courses.
-      Timeseries decomposition and modelization, auto-regressive 
-      and state-space models basics,
-      recurrent neural networks.
+  - name: engineering
+    title:
+      en: Engineering experience
+      fr: Expérience d'ingénieur
+    content:
+      - year: 2020-2022
+        title:
+          en: Research engineer
+          fr: Ingénieur de recherche
+        desc:
+          en: Open source software development for Reservoir Computing
+          fr: Développement d'un logiciel <i>open source</i> pour le <i>Reservoir Computing</i>
+        workplace:
+          name: Inria/IMN/LaBRI
+          location: Bordeaux, France
+        content:
+          en: >
+            Development of <i>reservoirpy</i>, a Python library aimed at providing standardized Reservoir
+            Computing tools. Software architecture, development, tests, documentation, deployment, 
+            public outreach (presentations, tutorials and scientific papers.)
+          fr: >
+            Développement de <i>reservoirpy</i>, une bibliothèque Python fournissant des outils standardisés 
+            pour le <i>Reservoir Computing</i>. Architecture logicielle, développement, tests, documentation,
+            déploiement et dissémination (présentations en congrès et ateliers, tutoriels et publications
+            scientifiques).
 
-  - year: 2021-2024
-    title: Teaching assistant
-    desc: Machine Learning
-    workplace:
-      name: ENSC
-      location: Talence, France
-    content: >
-      Master 1 students. Practical courses. Supervised and 
-      unsupervised learning methods basics, ML-powered 
-      data analysis, deep learning basics.
+      - year: 2019
+        title:
+          en: Engineering internship
+          fr: Stage ingénieur
+        desc:
+          en: Building NLP tools for a multipurpose chatbot
+          fr: Outils de traitement du langage naturel pour un agent conversationnel multi-usage.
+        workplace:
+          name: Wiidii
+          location: Bordeaux, France
+        content:
+          en: >
+            NLP models (BERT, Flair) fine-tuning for intent categorization and named entity recognition (NER).
+            Model serving within company micro-service architecture.
+          fr: >
+            Peaufinage de modèles de langage (BERT, Flair) pour la catégorisation d'intention des 
+            utilisateurs et la reconnaissance d'entités nommées (NER). Déploiement des outils
+            au sein de l'architecture micro-service de l'entreprise.
 
-services:
-  - year: 2023
-    title: Organizer
-    desc: 1st Open Science Workshop - Bordeaux Neurocampus
-    links:
-      event: https://bordeaux-neurocampus.github.io/OS-Workshop-2023/
+  - name: teaching
+    title:
+      en: Teaching experience
+      fr: Expérience d'enseignement
+    content:
+      - year: 2021-2024
+        title:
+          en: Teaching assistant
+          fr: Enseignant vacataire
+        desc:
+          en: Timeseries analysis and modelization
+          fr: Traitement des séries temporelles
+        workplace:
+          name: ENSC/ENSEIRB-MATMECA
+          location: Talence, France
+        content:
+          en: >
+            Master 2 students. Theoretical and practical courses.
+            Timeseries decomposition and modelization, auto-regressive 
+            and state-space models basics,
+            recurrent neural networks.
+          fr: >
+            Niveau Master II. Cours magistraux et pratiques.
+            Décomposition et modélisation des séries temporelles,
+            introduction aux modèles auto-régressifs et à états, 
+            réseaux de neurones récurrents.
 
-  - year: 2021-2024
-    title: Mentor - scientific advisor
-    desc: AI4Industry workshop
-    links:
-      event: https://www.ai4industry.fr/
-    
-  # - year: 2021-2024
-  #   title: Reviewer
-  #   desc: TODO
+      - year: 2021-2024
+        title:
+          en: Teaching assistant
+          fr: Enseignant vacataire
+        desc:
+          en: Machine Learning
+          fr: Apprentissage automatique (<i>machine learning</i>)
+        workplace:
+          name: ENSC
+          location: Talence, France
+        content:
+          en: >
+            Master 1 students. Practical courses. Supervised and 
+            unsupervised learning methods basics, ML-powered 
+            data analysis, deep learning basics.
+          fr: >
+            Niveau Master I. Cours pratiques. Introduction aux 
+            méthodes d'apprentissage supervisé et non-supervisé,
+            analyse de données orientée <i>machine learning</i>,
+            bases d'apprentissage profond (<i>deep learning</i>)
+  - name: services
+    title:
+      en: Academic services
+      fr: Service académique
+    content:
+      - year: 2023
+        title:
+          en: Organizer
+          fr: Organisateur
+        desc:
+          en: 1st Open Science Workshop - Bordeaux Neurocampus
+          fr: <i>Open Science Workshop</i>, 1ère édition - Bordeaux Neurocampus
+        links:
+          event: https://bordeaux-neurocampus.github.io/OS-Workshop-2023/
 
-software:
-  - title: reservoirpy
-    links:
-      github: https://github.com/reservoirpy/reservoirpy
-      doc: https://reservoirpy.readthedocs.io/en/latest/?badge=latest
-      pypi: https://pypi.org/project/reservoirpy/
-    desc: >
-      A simple and flexible code for Reservoir Computing architectures like Echo State Networks.
+      - year: 2021-2024
+        title:
+          en: Mentor - scientific advisor
+          fr: Responsable pédagogique - Animateur
+        desc:
+          en: AI4Industry workshop
+          fr: AI4Industry - séminaire (<i>workshop</i>)
+        links:
+          event: https://www.ai4industry.fr/
 
-  - title: canapy
-    links:
-      github: https://github.com/birds-canopy/canapy
-    desc: Automatic audio annotation tools for animal vocalizations.
+      # - year: 2021-2024
+      #   title: Reviewer
+      #   desc: TODO
 
-  - title: canarygan
-    links:
-      github: https://github.com/nTrouvain/canarygan
-    desc: A Pytorch+Lightning reimplementation of Pagliarini et al. (2021) "What does the Canary Say? Low-Dimensional GAN Applied to Birdsong".
+  - name: software
+    title:
+      en: Software and projects
+      fr: Logiciels et projets
+    content:
+      - title:
+          en: reservoirpy
+          fr: reservoirpy
+        links:
+          github: https://github.com/reservoirpy/reservoirpy
+          doc: https://reservoirpy.readthedocs.io/en/latest/?badge=latest
+          pypi: https://pypi.org/project/reservoirpy/
+        desc:
+          en: A simple and flexible code for Reservoir Computing architectures like Echo State Networks.
+          fr: >
+            Une bibliothèque simple et flexible pour la conception de modèles de <i>Reservoir Computing</i> 
+            comme les <i>Echo State Networks</i>.
+      - title:
+          en: canapy
+          fr: canapy
+        links:
+          github: https://github.com/birds-canopy/canapy
+        desc:
+          en: Automatic audio annotation tools for animal vocalizations.
+          fr: Outils pour l'annotation automatique de vocalisations animales.
+
+      - title:
+          en: canarygan
+          fr: canarygan
+        links:
+          github: https://github.com/nTrouvain/canarygan
+        desc:
+          en: >
+            A Pytorch+Lightning reimplementation of Pagliarini et al. (2021) 
+            "What does the Canary Say? Low-Dimensional GAN Applied to Birdsong".
+          fr: >
+            Une réimplémentation de Pagliarini et al. (2021) 
+            "What does the Canary Say? Low-Dimensional GAN Applied to Birdsong"
+            en Pytorch et Lightning. Outils pour générer automatiquement des
+            vocalisations de canaris.

@@ -1,9 +1,13 @@
 {% assign section = include.section %}
+{% assign loc = include.loc %}
+{% assign data = site.data.resume.sections | where: "name", section | first %}
+
+<h1 id="{{ data.name }}">{{ data.title[loc] }}</h1>
 
 <div class="resume">
     <table>
         <tbody>
-            {% for item in site.data.resume[section] %}
+            {% for item in data.content %}
             <tr>
                 {% if item.year %}
                 <td class="exp-date" colspan="1">
@@ -32,7 +36,7 @@
                 {% endif %}
                 <td colspan="1" class="exp-content">
                     <strong>
-                        {{ item.title }}
+                        {{ item.title[loc] }}
                     </strong>
 
                     {% if item.workplace %}
@@ -43,13 +47,13 @@
 
                     {% if item.desc %}
                     <br>
-                    <strong> > </strong> {{ item.desc }}
+                    <strong> > </strong> {{ item.desc[loc] }}
                     {% endif %}
 
                     <!-- Extended description -->
                     {% if item.content %}
                     <br>
-                    <small>{{ item.content }}</small>
+                    <small>{{ item.content[loc] }}</small>
                     {% endif %}
 
                     <!-- Software links -->
@@ -72,7 +76,7 @@
                             </td>
                             <td>
                                 {% for major in item.major %}
-                                <div id="{{ major.id }}"> {{ major.name }} </div>
+                                <div id="{{ major.id }}"> {{ major.name[loc] }} </div>
                                 {% endfor %}
                             </td>
                         </tr>
@@ -87,7 +91,7 @@
                             </td>
                             <td>
                                 {% for minor in item.minor %}
-                                <div id="{{ minor.id }}"> {{ minor.name }} </div>
+                                <div id="{{ minor.id }}"> {{ minor.name[loc] }} </div>
                                 {% endfor %}
                             </td>
                         </tr>
