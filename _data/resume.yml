@@ -12,9 +12,10 @@ sections:
         title:
           en: Master degree - "Diplôme d'ingénieur"
           fr: Diplôme d'ingénieur (grade Master II)
-        workplace:
-          name: "École Nationale Supérieure de Cognitique (ENSC)"
-          location: "Talence, France"
+        workplace: &ensc
+            name: "École Nationale Supérieure de Cognitique (ENSC)"
+            location: "Talence, France"
+            url: https://ensc.bordeaux-inp.fr/fr
         major:
           - name:
               en: "Machine Learning"
@@ -31,11 +32,12 @@ sections:
             id: cog
       - year: 2017
         title:
-          en: '"Classe préparatoire aux grandes écoles"'
-          fr: Classe préparatoire
+          en: '"Classes préparatoires aux grandes écoles"'
+          fr: Classes préparatoires
         workplace:
           name: "Toulouse INP"
           location: "Toulouse, France"
+          url: https://www.la-prepa-des-inp.fr/
         major:
           - name:
               en: "Biology"
@@ -63,9 +65,10 @@ sections:
         desc:
           en: Modelling Action-Perception Mechanisms for Vocal Gestures with Hierarchical Reservoirs
           fr: Modélisation des mécanismes d'action-perception pour les gestes vocaux à l'aide de reservoirs de neurones hiérarchiques
-        workplace:
-          name: Inria/IMN/LaBRI
+        workplace: &mnemosyne
+          name: Mnemosyne - Inria/IMN/LaBRI
           location: Bordeaux, France
+          url: https://team.inria.fr/mnemosyne/fr/
         content:
           en: >
             Computational neuroscience research project, aiming at modelizing vocal perception and
@@ -81,9 +84,7 @@ sections:
         desc:
           en: ML based automated annotation pipeline for bird songs
           fr: Outils logiciels d'annotation automatique de chants d'oiseaux
-        workplace:
-          name: Inria/IMN/LaBRI
-          location: Bordeaux, France
+        workplace: *mnemosyne
         content:
           en: >
             Development of an automatic birdsong annotation pipeline using machine learning tools
@@ -95,7 +96,7 @@ sections:
   - name: engineering
     title:
       en: Engineering experience
-      fr: Expérience d'ingénieur
+      fr: Expérience d'ingénierie
     content:
       - year: 2020-2022
         title:
@@ -104,9 +105,7 @@ sections:
         desc:
           en: Open source software development for Reservoir Computing
           fr: Développement d'un logiciel <i>open source</i> pour le <i>Reservoir Computing</i>
-        workplace:
-          name: Inria/IMN/LaBRI
-          location: Bordeaux, France
+        workplace: *mnemosyne
         content:
           en: >
             Development of <i>reservoirpy</i>, a Python library aimed at providing standardized Reservoir
@@ -124,7 +123,7 @@ sections:
           fr: Stage ingénieur
         desc:
           en: Building NLP tools for a multipurpose chatbot
-          fr: Outils de traitement du langage naturel pour un agent conversationnel multi-usage.
+          fr: Outils de traitement du langage naturel pour un agent conversationnel multi-usage
         workplace:
           name: Wiidii
           location: Bordeaux, France
@@ -133,9 +132,8 @@ sections:
             NLP models (BERT, Flair) fine-tuning for intent categorization and named entity recognition (NER).
             Model serving within company micro-service architecture.
           fr: >
-            Peaufinage de modèles de langage (BERT, Flair) pour la catégorisation d'intention des 
-            utilisateurs et la reconnaissance d'entités nommées (NER). Déploiement des outils
-            au sein de l'architecture micro-service de l'entreprise.
+            <i>Fine-tuning</i> de modèles de langage (BERT, Flair) pour la catégorisation des intention d'utilisateurs 
+            et la reconnaissance d'entités nommées (NER). Déploiement des outils au sein de l'architecture micro-service de l'entreprise.
 
   - name: teaching
     title:
@@ -152,6 +150,7 @@ sections:
         workplace:
           name: ENSC/ENSEIRB-MATMECA
           location: Talence, France
+          url: https://enseirb-matmeca.bordeaux-inp.fr/fr
         content:
           en: >
             Master 2 students. Theoretical and practical courses.
@@ -171,9 +170,7 @@ sections:
         desc:
           en: Machine Learning
           fr: Apprentissage automatique (<i>machine learning</i>)
-        workplace:
-          name: ENSC
-          location: Talence, France
+        workplace: *ensc
         content:
           en: >
             Master 1 students. Practical courses. Supervised and 
