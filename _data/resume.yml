@@ -3,6 +3,17 @@
 # Resume data file.
 # English and French.
 sections:
+  - name: intro 
+    content:
+      en: >
+
+      fr: >
+    links:
+      - id: github
+        icon:
+        url:
+        text:
+
   - name: education
     title:
       en: Education
@@ -14,6 +25,7 @@ sections:
           fr: Diplôme d'ingénieur (grade Master II)
         workplace: &ensc
             name: "École Nationale Supérieure de Cognitique (ENSC)"
+            short_name: "ENSC"
             location: "Talence, France"
             url: https://ensc.bordeaux-inp.fr/fr
         major:
@@ -137,8 +149,8 @@ sections:
 
   - name: teaching
     title:
-      en: Teaching experience
-      fr: Expérience d'enseignement
+      en: Teaching
+      fr: Enseignement
     content:
       - year: 2021-2024
         title:
@@ -149,6 +161,7 @@ sections:
           fr: Traitement des séries temporelles
         workplace:
           name: ENSC/ENSEIRB-MATMECA
+          short_name: ENSC/ENSEIRB-MATMECA
           location: Talence, France
           url: https://enseirb-matmeca.bordeaux-inp.fr/fr
         content:
@@ -162,7 +175,9 @@ sections:
             Décomposition et modélisation des séries temporelles,
             introduction aux modèles auto-régressifs et à états, 
             réseaux de neurones récurrents.
-
+        short_content:
+          en: Theoretical and pratical courses. Master I level.
+          fr: Cours magistraux et pratiques. Niveau Master I.
       - year: 2021-2024
         title:
           en: Teaching assistant
@@ -181,10 +196,13 @@ sections:
             méthodes d'apprentissage supervisé et non-supervisé,
             analyse de données orientée <i>machine learning</i>,
             bases d'apprentissage profond (<i>deep learning</i>)
+        short_content:
+          en: Pratical courses. Master I level.
+          fr: Travaux pratiques. Niveau Master I.
   - name: services
     title:
       en: Academic services
-      fr: Service académique
+      fr: Services académiques
     content:
       - year: 2023
         title:
