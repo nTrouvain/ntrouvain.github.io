@@ -33,7 +33,11 @@
 )
 
 #set par(
-  leading: 0.5em
+  leading: 0.65em
+)
+
+#set list(
+  marker: ">"
 )
 
 // Modifiers
@@ -54,6 +58,7 @@
       )
     ]
   )
+  #v(0.5em)
 ]
 // ------
 
@@ -155,7 +160,7 @@
 //------
 
 //--- Layouts ---
-#let chrono-desc(item) = {
+#let full-chrono-desc(item) = {
 
   let workplace = highlighter[*#escape-html(item.workplace.name)*]
   if "url" in item.workplace {
@@ -197,17 +202,17 @@
           [#skills.join(", ")]
         }
       ]
-    )
+    ),
   )
 }
 
-#let chrono-line(item, height: 1em, use-vline: true) = {
-  let year = none
+#let chrono-line(item) = {
+  let year = none 
   if "-" in str(item.year) {
     let (start-y, end-y) = item.year.split("-")
     year = [
       #set par(leading: 0.2em)
-      #start-y\ - \ #end-y
+      #end-y\ - \ #start-y
     ]
   } else {
     year = item.year
@@ -216,10 +221,46 @@
   pill([*#year*])
 }
 
-#let chronology(section) = {
-  set par(justify: true)
+#let teaching-item(item) = {
+  let workplace = item.workplace.name
+  if "short_name" in item.workplace {
+    workplace = item.workplace.short_name
+  }
+  workplace = [*#escape-html(workplace)*]
 
-  [= #section.title.at(lang) ]
+  if "url" in item.workplace {
+    workplace = link(item.workplace.url)[#workplace]
+  }
+  
+  [
+    #[#set text(size: 10pt)
+    *#escape-html(item.desc.at(lang))*
+    ]
+    \ #workplace | #item.year 
+    \ #escape-html(item.short_content.at(lang))
+  ]
+}
+
+
+#let services-item(item) = [
+  #[
+    #set text(size: 10pt)
+    *#escape-html(item.desc.at(lang))*
+  ]
+  \ #escape-html(item.title.at(lang)) | #item.year 
+]
+
+
+#let software-item(item) = [
+    #[
+    #set text(size: 10pt)
+    #link(item.links.github)[*#escape-html(item.title.at(lang))*]
+  ]\
+  #escape-html(item.desc.at(lang))
+]
+
+#let chronology(section, short: false) = {
+  set par(justify: true)
 
   layout(page-size => [
     #{
@@ -232,14 +273,22 @@
       let item-spacing = 1em
       
       for item in section.content {
-
-          let desc = chrono-desc(item)
+          
+          let desc = none
+          if not(short){
+            desc = full-chrono-desc(item)
+          } else {
+            desc = short-chrono-desc(item)
+          }
           let desc-h = measure(box(width: col2-w, desc)).height
 
           let year = chrono-line(item)
           let year-h = measure(box(width: col1-w, year)).height
 
           let line-h = desc-h - year-h - gutter + item-spacing
+          if line-h.to-absolute() < (0.5em).to-absolute() {
+              line-h = 0pt
+            }
 
           contents += (
             grid.cell(
@@ -282,55 +331,95 @@
 // ------
 
 // --- Header ---
+
 #grid(
-  columns: (1fr, 1.5fr, 1fr),
-  gutter: 1em,
-  align(left)[
-    #set text(size: 36pt)
-    #set par(leading: 0.25em)
-    *Nathan\ Trouvain*
+  columns: (0.6fr, 0.4fr),
+  text(size: 36pt)[
+    *Nathan Trouvain*
   ],
-  align(left)[
-    #postit[
-      #[
-        #set text(size: 14pt)
-        Ingénieur cogniticien
-      ] \
-      #[
-        #lorem(15)
-      ]
-    ]
-  ],
-  align(left)[
-    #postit[
-      #link("mailto:ntrouvain@ensc.fr")[
-        ntrouvain\@ensc.fr
-      ]
-
-      #link("https://github.com/ntrouvain")[
-        #box(
-          height: 1em,
-          image(
-            "../assets/Octicons-mark-github.svg",
-            alt: "Github logo"
-          )
-        )
-        ~nTrouvain
-      ]
-
-      #link("https://ntrouvain.github.io")[
-        ntrouvain.github.io
-      ]
-    ]
+  text(size: 12pt)[
+    #lorem(30)
   ]
 )
+//#grid(
+//  columns: (1fr, 1.7fr, 0.75fr),
+//  gutter: 1em,
+//  align(left)[
+//    #set text(size: 36pt)
+//    #set par(leading: 0.25em)
+//    *Nathan\ Trouvain*
+//  ],
+//  align(left)[
+//    #postit[
+//      #[
+//        #set text(size: 14pt)
+//        Ingénieur cogniticien
+//      ] \
+//      #[
+//        #lorem(15)
+//      ]
+//    ]
+//  ],
+//  align(left)[
+//    #postit[
+//      #link("mailto:ntrouvain@ensc.fr")[
+//        ntrouvain\@ensc.fr
+//      ]
+//
+//      #link("https://github.com/ntrouvain")[
+//        #box(
+//          height: 1em,
+//          image(
+//            "../assets/Octicons-mark-github.svg",
+//            alt: "Github logo"
+//          )
+//        )
+//        ~nTrouvain
+//      ]
+//
+//      #link("https://ntrouvain.github.io")[
+//        ntrouvain.github.io
+//      ]
+//    ]
+//  ]
+//)
 
 // ------
 
 // --- Body ---
 
-#chronology(research)
+= #research.title.at(lang)
 
-#chronology(engineering)
+  #chronology(research)
 
-#chronology(education)
+= #engineering.title.at(lang)
+
+  #chronology(engineering)
+
+= #software.title.at(lang)
+
+  #list(
+    ..software.content.map(software-item)
+  )
+
+= #education.title.at(lang)
+
+  #chronology(education)
+
+#columns(2, gutter: 1em)[
+  = #teaching.title.at(lang)
+
+    #list(
+      tight: false,
+      ..teaching.content.map(teaching-item)
+    ) 
+  
+  = #services.title.at(lang)
+  
+    #list(
+      tight: false,
+      ..services.content.map(services-item)
+    )
+]
+
+
