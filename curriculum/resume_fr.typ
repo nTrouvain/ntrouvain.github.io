@@ -66,6 +66,7 @@
 #let lang = "fr"
 #let resume = yaml("../_data/resume.yml").sections
 
+#let intro       = resume.filter((x) => x.name == "intro").first()
 #let education   = resume.filter((x) => x.name == "education").first()
 #let research    = resume.filter((x) => x.name == "research").first()
 #let engineering = resume.filter((x) => x.name == "engineering").first()
@@ -122,15 +123,12 @@
 }
 
 #let highlighter(body) = {
-  underline(
-    evade: false,
-    background: true,
-    extent: -1em,
-    stroke: stroke(
-      thickness: 5pt,
-      paint: gradient.linear(theme.lighty, theme.darky),
-      cap: "round"
-    ),
+  highlight(
+    top-edge: 0.4em,
+    bottom-edge: -0.4em,
+    radius: 1em,
+    extent: -0.3em,
+    fill: gradient.linear(theme.lighty, theme.darky),
     body,
   )
 }
@@ -140,11 +138,12 @@
   [#body]
 }
 
-#let escape-html(it) = {
+#let escape-html(body) = {
   return eval(
-    it.replace(regex("<\/?i>"), "_")
-      .replace(regex("<\/?b>"), "*"), 
-      mode: "markup"
+    body.replace(regex("<\/?i>"), "_")
+        .replace(regex("<\/?b>"), "*")
+        .replace(regex("&nbsp"), "~"),
+    mode: "markup"
   )
 }
 
@@ -162,7 +161,7 @@
 //--- Layouts ---
 #let full-chrono-desc(item) = {
 
-  let workplace = highlighter[*#escape-html(item.workplace.name)*]
+  let workplace = [*#escape-html(item.workplace.name)*]
   if "url" in item.workplace {
     workplace = link(item.workplace.url)[#workplace]
   }
@@ -331,15 +330,37 @@
 // ------
 
 // --- Header ---
-
 #grid(
   columns: (0.6fr, 0.4fr),
-  text(size: 36pt)[
-    *Nathan Trouvain*
+  column-gutter: -80pt,
+  stack(
+    dir: ttb,
+    spacing: 1em,
+    text(size: 36pt)[
+      *Nathan Trouvain*
+    ],
+    {
+      let links = ()
+      for item in intro.links {
+        let icon = item.icon
+        if "svg" in item.icon {
+          icon = box(height: 1em, baseline: 20%, image.decode(icon))
+        }
+        links += (link(item.url)[#icon~~#item.text],)
+      }
+      [#links.join([#sym.space.quad|#sym.space.quad])]
+    },
+  ),
+  text(size: 11pt)[
+    #show emph: it => {
+      highlighter(it)
+    }
+    *#escape-html(intro.desc.at(lang))* \
+    #[
+      #set par(justify: true)
+      #escape-html(intro.content.at(lang))
+    ]
   ],
-  text(size: 12pt)[
-    #lorem(30)
-  ]
 )
 //#grid(
 //  columns: (1fr, 1.7fr, 0.75fr),
