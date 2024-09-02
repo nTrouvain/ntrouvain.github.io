@@ -2,6 +2,7 @@
 
 # Resume data file.
 # English and French.
+author: "Nathan Trouvain"
 sections:
   - name: intro
     desc:

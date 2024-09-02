@@ -1,8 +1,14 @@
+// resume_en.typ
+// en_US resume
+// Last modified: 02/09/2024
+// Author: Nathan Trouvain (ntrouvain)
+
+#import "resume.typ": resume
+
 #let data = yaml("../_data/resume.yml")
 
-#let get_by_name(it, name: "") = {
-  return it.at("name") == name
+#show "reservoirpy": it => {
+  link("https://github.com/reservoirpy/reservoirpy")[#it]
 }
 
-
-#data.sections.find(get_by_name.with(name: "software"))
+#show: doc => resume(data, lang: "en")
