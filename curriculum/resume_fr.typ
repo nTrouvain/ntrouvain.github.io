@@ -33,11 +33,12 @@
 )
 
 #set par(
-  leading: 0.65em
+  leading: 0.5em
 )
 
 #set list(
-  marker: ">"
+  marker: ">",
+  spacing: 1em,
 )
 
 // Modifiers
@@ -58,7 +59,7 @@
       )
     ]
   )
-  #v(0.5em)
+  #v(0.15em)
 ]
 // ------
 
@@ -73,6 +74,8 @@
 #let software    = resume.filter((x) => x.name == "software").first()
 #let teaching    = resume.filter((x) => x.name == "teaching").first()
 #let services    = resume.filter((x) => x.name == "services").first()
+#let skills      = resume.filter((x) => x.name == "skills").first()
+#let references  = resume.filter((x) => x.name == "references").first()
 
 #show "reservoirpy": it => {
   link("https://github.com/reservoirpy/reservoirpy")[#it]
@@ -147,15 +150,40 @@
   )
 }
 
-#let width-of(body) = context {
-  let size = measure(body)
-  return size.width
+// © 2023 Ruben Felgenhauer
+// Usage of the works is permitted provided that this instrument is retained with the works, so that any entity that uses the works is notified of this instrument.
+
+#let LaTeX = {
+  set text(font: "New Computer Modern")
+  let A = (
+    offset: (
+      x: -0.33em,
+      y: -0.3em,
+    ),
+    size: 0.7em,
+  )
+  let T = (
+    x_offset: -0.12em    
+  )
+  let E = (
+    x_offset: -0.2em,
+    y_offset: 0.23em,
+    size: 1em
+  )
+  let X = (
+    x_offset: -0.1em
+  )
+  [L#h(A.offset.x)#text(size: A.size, baseline: A.offset.y)[A]#h(T.x_offset)T#h(E.x_offset)#text(size: E.size, baseline: E.y_offset)[E]#h(X.x_offset)X]
 }
 
-#let heigth-of(body) = context {
-  let size = measure(body)
-  return size.heigth
+#let typst = {
+  set text(font: "Linux Libertine", weight: "bold")
+  [typst]
 }
+
+#show "typst": name => typst
+#show "LaTeX": name => LaTeX
+
 //------
 
 //--- Layouts ---
@@ -183,7 +211,8 @@
       align(left + horizon)[
         #{
           if "desc" in item [
-            *#escape-html(item.desc.at(lang))*
+            #set text(size: 10pt)
+            *_#escape-html(item.desc.at(lang))_*
           ]
           if "content" in item [
             \
@@ -205,6 +234,7 @@
   )
 }
 
+
 #let chrono-line(item) = {
   let year = none 
   if "-" in str(item.year) {
@@ -219,6 +249,7 @@
 
   pill([*#year*])
 }
+
 
 #let teaching-item(item) = {
   let workplace = item.workplace.name
@@ -244,7 +275,11 @@
 #let services-item(item) = [
   #[
     #set text(size: 10pt)
-    *#escape-html(item.desc.at(lang))*
+    #if "links" in item [
+      #link(item.links.event)[*#escape-html(item.desc.at(lang))*]
+    ] else [
+      *#escape-html(item.desc.at(lang))*
+    ]
   ]
   \ #escape-html(item.title.at(lang)) | #item.year 
 ]
@@ -255,8 +290,26 @@
     #set text(size: 10pt)
     #link(item.links.github)[*#escape-html(item.title.at(lang))*]
   ]\
-  #escape-html(item.desc.at(lang))
+  #escape-html(item.desc.at(lang)) 
+  #if "ref" in item [
+    #cite(label(item.ref))
+  ]
 ]
+
+
+#let skills-item(item) = [
+
+  #let get-name(it) = {
+    if type(it) == dictionary and "name" in it {
+      return it.name.at(lang)
+     } else {
+      return it
+     }
+  }
+
+  *#item.name.at(lang):* #item.skills.map(get-name).join(", ").
+]
+
 
 #let chronology(section, short: false) = {
   set par(justify: true)
@@ -329,6 +382,7 @@
 }
 // ------
 
+
 // --- Header ---
 #grid(
   columns: (0.6fr, 0.4fr),
@@ -362,50 +416,8 @@
     ]
   ],
 )
-//#grid(
-//  columns: (1fr, 1.7fr, 0.75fr),
-//  gutter: 1em,
-//  align(left)[
-//    #set text(size: 36pt)
-//    #set par(leading: 0.25em)
-//    *Nathan\ Trouvain*
-//  ],
-//  align(left)[
-//    #postit[
-//      #[
-//        #set text(size: 14pt)
-//        Ingénieur cogniticien
-//      ] \
-//      #[
-//        #lorem(15)
-//      ]
-//    ]
-//  ],
-//  align(left)[
-//    #postit[
-//      #link("mailto:ntrouvain@ensc.fr")[
-//        ntrouvain\@ensc.fr
-//      ]
-//
-//      #link("https://github.com/ntrouvain")[
-//        #box(
-//          height: 1em,
-//          image(
-//            "../assets/Octicons-mark-github.svg",
-//            alt: "Github logo"
-//          )
-//        )
-//        ~nTrouvain
-//      ]
-//
-//      #link("https://ntrouvain.github.io")[
-//        ntrouvain.github.io
-//      ]
-//    ]
-//  ]
-//)
-
 // ------
+
 
 // --- Body ---
 
@@ -420,12 +432,21 @@
 = #software.title.at(lang)
 
   #list(
+    tight: false,
     ..software.content.map(software-item)
   )
 
 = #education.title.at(lang)
 
   #chronology(education)
+
+= #skills.title.at(lang)
+    
+  #list(
+    tight: false,
+    ..skills.content.map(skills-item)
+  )
+
 
 #columns(2, gutter: 1em)[
   = #teaching.title.at(lang)
@@ -434,7 +455,9 @@
       tight: false,
       ..teaching.content.map(teaching-item)
     ) 
-  
+
+  #colbreak()
+
   = #services.title.at(lang)
   
     #list(
@@ -443,4 +466,12 @@
     )
 ]
 
+  #pagebreak()
+  = #references.title.at(lang)
 
+    #bibliography(
+      "../_data/bib.yml",
+      title: none,
+      style: "institute-of-electrical-and-electronics-engineers",
+      full: true
+    )

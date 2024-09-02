@@ -230,6 +230,7 @@ sections:
         short_content:
           en: Pratical courses. Master I level.
           fr: Travaux pratiques. Niveau Master I.
+
   - name: services
     title:
       en: Academic services
@@ -255,9 +256,13 @@ sections:
         links:
           event: https://www.ai4industry.fr/
 
-      # - year: 2021-2024
-      #   title: Reviewer
-      #   desc: TODO
+      - year: 2021-2024
+        title:
+          en: CogSci 2022, ICANN 2021, ICANN 2020
+          fr: CogSci 2022, ICANN 2021, ICANN 2020
+        desc:
+          en: Peer-review
+          fr: Revue de publications scientifiques
 
   - name: software
     title:
@@ -276,6 +281,8 @@ sections:
           fr: >
             Bibliothèque simple et flexible pour la conception de modèles de <i>Reservoir Computing</i> 
             comme les <i>Echo State Networks</i>.
+        ref: trouvain2020reservoirpy
+
       - title:
           en: canapy
           fr: canapy
@@ -292,10 +299,54 @@ sections:
           github: https://github.com/nTrouvain/canarygan
         desc:
           en: >
-            A Pytorch+Lightning reimplementation of Pagliarini et al. (2021) 
-            "What does the Canary Say? Low-Dimensional GAN Applied to Birdsong".
+            A Pytorch+Lightning reimplementation of Pagliarini et al. (2021):
+            a generative model to explore songbirds vocal production capabilities.
           fr: >
-            Réimplémentation de Pagliarini et al. (2021) 
-            "What does the Canary Say? Low-Dimensional GAN Applied to Birdsong"
-            en Pytorch et Lightning. Outils pour générer automatiquement des
-            vocalisations de canaris.
+            Réimplémentation de Pagliarini et al. (2021) : modèles génératifs
+            pour l'exploration de la poduction vocale des oiseaux chanteurs.
+        ref: pagliarini2021canary
+
+  - name: skills
+    title: 
+      en: Skills 
+      fr: Compétences
+    content:
+      - section: prog
+        name:
+          fr: Programmation
+          en: Programming
+        skills: 
+          - Python
+          - Pytorch/TensorFlow
+          - Slurm
+          - Lightning
+          - C#
+          - R
+          - Git
+          - GNU Linux
+          - name: 
+              en: Web development basics
+              fr: Bases de développement web
+      - section: design 
+        name: 
+          fr: Design et typographie
+          en: Design and typsetting
+        skills:
+          - LaTeX/typst
+          - Adobe Illustrator/Figma
+      - section: language
+        name: 
+          fr: Langages
+          en: Languages
+        skills:
+          - name: 
+              en: English (fluent)
+              fr: Anglais (courant)
+          - name:
+              en: French (native)
+              fr: Français (natif)
+    
+  - name: references
+    title:
+      en: Publications and presentations
+      fr: Publications et présentations

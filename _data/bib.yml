@@ -93,7 +93,7 @@ trouvain2023sprint:
     - type: conference
       title: '{PyConFR} 2023'
       location: Bordeaux, France
-  note:
+  links:
     - type: event
       url: https://www.pycon.fr/2023/en/talks/sprint.html#amelioration-de-reservoirpy-un
 
@@ -167,7 +167,7 @@ trouvain2022scai:
     - type: conference
       title: '{AI-DevTalks}'
       location: '{Sorbonne Center for Articifial Intelligence (SCAI)}, {Paris}, {France}'
-  note:
+  links:
     - type: video
       url: https://sed.paris.inria.fr/ai-dev-talks/videos/AI_DevTalk_22-03-22.mp4
     - type: slides
@@ -187,7 +187,7 @@ trouvain2022dataquitaine:
     - type: conference
       title: '{Dataquitaine} 2022'
       location: '{Bordeaux}, {France}'
-  note:
+  links:
     - type: video
       url: https://www.youtube.com/watch?v=CDzQ9giWTCs
 
