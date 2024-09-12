@@ -5,7 +5,7 @@
 
 #import "resume.typ": resume
 
-#let data = yaml("../_data/resume.yml")
+#let data = yaml("_data/resume.yml")
 
 #show "reservoirpy": it => {
   link("https://github.com/reservoirpy/reservoirpy")[#it]

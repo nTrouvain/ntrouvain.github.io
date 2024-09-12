@@ -4,4 +4,4 @@ title: Art
 permalink: /art
 ---
 
-⚠️ WIP ⚠️
+⚠️ WIP ⚠️ (Coming soon)

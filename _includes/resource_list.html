@@ -1,0 +1,35 @@
+{% assign lbrace = '{' %}
+{% assign rbrace = '}' %}
+
+{% assign res_type = include.res_type %}
+
+<div class="bib">
+    <table>
+        <tbody>
+            {% for res in site.data.resourcelist[res_type] %}
+            <tr>
+                <td colspan="2">
+                    <a class="resource {{ res.type }}" href="{{ res.url }}" target="_blank">{{ res.type | upcase }}</a>
+                    &nbsp;
+                    <strong>
+                        {{ res.title | remove: lbrace | remove: rbrace | replace: '~', '&nbsp;' }}.
+                    </strong>
+                    <br/>
+                    <i>
+                      {{ res.desc }}
+                    </i>
+                    <small>                    <br/>
+                      > Language: {{ res.lang }}.
+                    <br/>
+                    {%- if res.level -%}
+                      > Student level: {{ res.level }}
+                    <br/>
+                    {%- endif -%}
+                      > Created: {{ res.year }}
+                    </small>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

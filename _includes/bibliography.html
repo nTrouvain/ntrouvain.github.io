@@ -45,7 +45,7 @@
                     <a class="resource {{ serial[0] }}" href="{{ url }}" target="_blank">{{ serial[0] | upcase }}</a>
                     {% endfor %}
 
-                    {% for resource in ref.note %}
+                    {% for resource in ref.links %}
                     <a class="resource {{ resource.type }}" href="{{ resource.url }}" target="_blank">{{ resource.type |
                         upcase }}</a>
                     {% endfor %}

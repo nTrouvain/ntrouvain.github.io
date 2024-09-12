@@ -1,0 +1,55 @@
+course:
+  - title: Deep Learning 101 for French engineering undergraduates
+    desc: >
+      A short lecture (1h30) about applying gradient backpropagation,
+      gradient descent, loss functions, and introducing all the basic 
+      deep learning gear. Part of a wider series of lectures by Baptiste
+      Pesquet at ENSC.
+    level: Master I
+    lang: French
+    year: 2024
+    url: https://github.com/nTrouvain/teaching-resources/blob/main/slides/pdf/deep-learning-101.pdf
+    type: slides
+
+  - title: Deep Learning 101 for French engineering undergraduates (pratical course)
+    desc: >
+      A Jupyter notebook to code deep learning's classic algorithms (almost) from scratch
+      in Python. Part of a wider series of pratical courses by Baptiste Pesquet at 
+      ENSC.
+    level: Master I
+    lang: English
+    year: 2023
+    url: https://github.com/nTrouvain/teaching-resources/blob/main/notebooks/mlp_from_scratch/MLP_From_Scratch.ipynb
+    type: notebook
+
+  - title: Introduction to timeseries analysis and modelization for French engineering undergraduates
+    desc: >
+      A very quick and dirty introduction to timeseries analyis basics
+      (autocorrelation function, decomposition, basic modeling using ARIMA
+      or HMM). Meant to list historical solutions to simple problems.
+    level: Master II
+    lang: French
+    year: 2022
+    url: https://github.com/nTrouvain/teaching-resources/blob/main/slides/pdf/timeseries_1_ensc2023.pdf
+    type: slides
+
+  - title: Recurrent Neural Networks basics in Pytorch for French engineering undergraduates
+    desc: >
+      A small pratical course detailing the typology of Recurrent Neural networks 
+      and how to apply them to toy use-cases using Pytorch. 
+    lang: English
+    level: Master II
+    year: 2023
+    url: https://github.com/nTrouvain/teaching-resources/blob/main/notebooks/rnn_basics/RNN_basics.ipynb
+    type: notebook
+
+
+tutorial:
+  - title: An Introduction to Reservoir Computing with reservoirpy
+    desc: >
+      A demonstration of Reservoir Computing basic principles and applications
+      and a walkthrough of reservoirpy basics.
+    lang: English
+    year: 2021
+    url: https://github.com/reservoirpy/reservoirpy/blob/master/tutorials/3-General_Introduction_to_Reservoir_Computing.ipynb
+    type: notebook

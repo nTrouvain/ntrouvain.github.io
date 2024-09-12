@@ -198,7 +198,7 @@ sections:
           url: https://enseirb-matmeca.bordeaux-inp.fr/fr
         content:
           en: >
-            Master 2 students. Theoretical and practical courses.
+            Master II students. Theoretical and practical courses.
             Timeseries decomposition and modelization, auto-regressive 
             and state-space models basics,
             recurrent neural networks.
@@ -208,8 +208,8 @@ sections:
             introduction aux modèles auto-régressifs et à états, 
             réseaux de neurones récurrents.
         short_content:
-          en: Theoretical and pratical courses. Master I level.
-          fr: Cours magistraux et pratiques. Niveau Master I.
+          en: Theoretical and pratical courses. Master II level.
+          fr: Cours magistraux et pratiques. Niveau Master II.
       - year: 2021-2024
         title:
           en: Teaching assistant
@@ -220,7 +220,7 @@ sections:
         workplace: *ensc
         content:
           en: >
-            Master 1 students. Practical courses. Supervised and 
+            Master I students. Practical courses. Supervised and 
             unsupervised learning methods basics, ML-powered 
             data analysis, deep learning basics.
           fr: >
@@ -229,8 +229,8 @@ sections:
             analyse de données orientée <i>machine learning</i>,
             bases d'apprentissage profond (<i>deep learning</i>)
         short_content:
-          en: Pratical courses. Master I level.
-          fr: Travaux pratiques. Niveau Master I.
+          en: Theoretical and pratical courses. Master I level.
+          fr: Cours magistraux et pratiques. Niveau Master I.
 
   - name: services
     title:
@@ -304,7 +304,7 @@ sections:
             a generative model to explore songbirds vocal production capabilities.
           fr: >
             Réimplémentation de Pagliarini et al. (2021) : modèles génératifs
-            pour l'exploration de la poduction vocale des oiseaux chanteurs.
+            pour l'exploration de la production vocale des oiseaux chanteurs.
         ref: pagliarini2021canary
 
   - name: skills

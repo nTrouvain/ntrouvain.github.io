@@ -229,6 +229,8 @@
  * Bibliography
  */
 .bib {
+  font-size: $base-font-size;
+
   table {
     all: revert;
 
@@ -266,6 +268,26 @@ a.resource {
 
     &:hover {
       background-color: olivedrab;
+      color: white;
+    }
+  }
+
+  &.pdf-fr {
+    border-color: RoyalBlue;
+    color: RoyalBlue;
+
+    &:hover {
+      background-color: RoyalBlue;
+      color: white;
+    }
+  }
+
+  &.pdf-en {
+    border-color: Crimson;
+    color: Crimson;
+
+    &:hover {
+      background-color: Crimson;
       color: white;
     }
   }
@@ -326,6 +348,16 @@ a.resource {
 
     &:hover {
       background-color: steelblue;
+      color: white;
+    }
+  }
+  
+  &.notebook {
+    border-color: DarkOrange;
+    color: DarkOrange;
+
+    &:hover {
+      background-color: DarkOrange;
       color: white;
     }
   }
