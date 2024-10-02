@@ -452,7 +452,7 @@
     = #references.title.at(lang)
 
       #bibliography(
-        "_data/bib.yml",
+        "../_data/bib.yml",
         title: none,
         style: "institute-of-electrical-and-electronics-engineers",
         full: true

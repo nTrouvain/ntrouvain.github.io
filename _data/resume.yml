@@ -318,18 +318,28 @@ sections:
           en: Programming
         skills: 
           - Python
+          - name:
+              en: Python scientific stack (numpy, scipy, pandas...)
+              fr: Outils scientifiques Python (numpy, scipy, pandas...)
+          - name:
+              en: Visualization (matplotlib, bokeh, panel)
+              fr: Visualisation (matplotlib, bokeh, panel)
           - Pytorch/TensorFlow
           - Slurm
           - Lightning
+          - name:
+              en: SQL databases
+              fr: Bases de données SQL
+          - name:
+              en: Web development basics (HTML/CSS/SCSS, React)
+              fr: Bases de développement web (HTML/CSS/SCSS, React)
           - C#
           - R
           - Git
+          - Docker
           - GNU Linux
-          - name: 
-              en: Web development basics
-              fr: Bases de développement web
-      - section: design 
-        name: 
+      - section: design
+        name:
           fr: Design et typographie
           en: Design and typsetting
         skills:
