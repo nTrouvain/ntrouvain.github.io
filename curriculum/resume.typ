@@ -39,8 +39,8 @@
   #set page(
     paper: "a4",
     margin: (
-      top: 1.5cm,
-      bottom: 1.5cm,
+      top: 1.25cm,
+      bottom: 1.25cm,
       left: 1.5cm,
       right: 1.5cm,
     ),
@@ -56,7 +56,7 @@
   )
 
   #set par(
-    leading: 0.5em
+    leading: 0.4em
   )
 
   #set list(

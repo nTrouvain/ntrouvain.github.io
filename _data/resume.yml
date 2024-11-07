@@ -322,22 +322,33 @@ sections:
               en: Python scientific stack (numpy, scipy, pandas...)
               fr: Outils scientifiques Python (numpy, scipy, pandas...)
           - name:
-              en: Visualization (matplotlib, bokeh, panel)
-              fr: Visualisation (matplotlib, bokeh, panel)
+              en: Visualization and dashboarding (matplotlib, bokeh, panel)
+              fr: Visualisation et dashboarding (matplotlib, bokeh, panel)
           - Pytorch/TensorFlow
-          - Slurm
-          - Lightning
+          - HPC (Lightning, Slurm)
+          - name:
+              en: Web development (HTML/CSS/SCSS, React.js)
+              fr: Développement web (HTML/CSS/SCSS, React.js)
+          - C#
+          - R
+          - GNU Linux
+      - section: software
+        name:
+          fr: Ingénierie logicielle
+          en: Software engineering
+        skills:
           - name:
               en: SQL databases
               fr: Bases de données SQL
+          - ORM (SQLAlchemy)
           - name:
-              en: Web development basics (HTML/CSS/SCSS, React)
-              fr: Bases de développement web (HTML/CSS/SCSS, React)
-          - C#
-          - R
-          - Git
-          - Docker
-          - GNU Linux
+              en: API development (FastAPI, Flask, Pydantic)
+              fr: Développement API (FastAPI, Flask, Pydantic)
+          - CI/CD (Git, Github Actions, Docker)
+          - name:
+              en: Testing (Pytest)
+              fr: Tests (Pytest)
+          - Documentation (Sphinx)
       - section: design
         name:
           fr: Design et typographie
