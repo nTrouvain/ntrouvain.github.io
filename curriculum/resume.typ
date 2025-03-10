@@ -17,8 +17,9 @@
   // --- Data sources ---
   #let intro       = sections.filter((x) => x.name == "intro").first()
   #let education   = sections.filter((x) => x.name == "education").first()
-  #let research    = sections.filter((x) => x.name == "research").first()
-  #let engineering = sections.filter((x) => x.name == "engineering").first()
+  // #let research    = sections.filter((x) => x.name == "research").first()
+  // #let engineering = sections.filter((x) => x.name == "engineering").first()
+  #let experience  = sections.filter((x) => x.name == "experience").first()
   #let software    = sections.filter((x) => x.name == "software").first()
   #let teaching    = sections.filter((x) => x.name == "teaching").first()
   #let services    = sections.filter((x) => x.name == "services").first()
@@ -403,13 +404,17 @@
 
   // --- Body ---
 
-  = #research.title.at(lang)
+  // = #research.title.at(lang)
 
-    #chronology(research)
+  //   #chronology(research)
 
-  = #engineering.title.at(lang)
+  // = #engineering.title.at(lang)
 
-    #chronology(engineering)
+  //   #chronology(engineering)
+
+  = #experience.title.at(lang)
+    
+    #chronology(experience)
 
   = #software.title.at(lang)
 

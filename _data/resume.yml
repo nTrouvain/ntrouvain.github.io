@@ -49,7 +49,7 @@ sections:
   - name: education
     title:
       en: Education
-      fr: Éducation
+      fr: Formation
     content:
       - year: 2020
         title:
@@ -97,10 +97,10 @@ sections:
               fr: Physique
             id: phy
 
-  - name: research
+  - name: experience
     title:
-      en: Research experience
-      fr: Expérience de recherche
+      en: Experience
+      fr: Expérience
     content:
       - year: 2022-2024
         title:
@@ -116,32 +116,11 @@ sections:
         content:
           en: >
             Computational neuroscience research project, aiming at modelizing vocal perception and
-            production in songbirds, and eventually in humans.
+            production in songbirds, and eventually in humans. Generative models, LLMs and neuro-imaging data analysis.
           fr: >
             Projet de recherche en neurosciences computationnelles, visant à modéliser la perception 
-            et la production vocale chez les oiseaux chanteurs, et à terme chez l'humain.
-
-      - year: 2020
-        title:
-          en: Research internship
-          fr: Stage de fin d'étude
-        desc:
-          en: ML based automated annotation pipeline for bird songs
-          fr: Outils logiciels d'annotation automatique de chants d'oiseaux
-        workplace: *mnemosyne
-        content:
-          en: >
-            Development of an automatic birdsong annotation pipeline using machine learning tools
-            (Reservoir Computing).
-          fr: >
-            Developpement d'outils d'annotation automatique de chants d'oiseaux basés sur des 
-            méthodes d'apprentissage automatique (<i>machine learning</i>; <i>Reservoir Computing</i>).
-
-  - name: engineering
-    title:
-      en: Engineering experience
-      fr: Expérience d'ingénierie
-    content:
+            et la production vocale chez les oiseaux chanteurs, et à terme chez l'humain. Modèles génératifs, LLMs et analyse de données d'imagerie.
+      
       - year: 2020-2022
         title:
           en: Research engineer
@@ -160,6 +139,23 @@ sections:
             pour le <i>Reservoir Computing</i>. Architecture logicielle, développement, tests, documentation,
             déploiement et dissémination (présentations en congrès et ateliers, tutoriels et publications
             scientifiques).
+
+      - year: 2020
+        title:
+          en: Research internship
+          fr: Stage de fin d'étude
+        desc:
+          en: ML based automated annotation pipeline for bird songs
+          fr: Outils logiciels d'annotation automatique de chants d'oiseaux
+        workplace: *mnemosyne
+        content:
+          en: >
+            Development of an automatic birdsong annotation pipeline using machine learning tools
+            (Reservoir Computing). Data vizualization, dashboarding, semi-supervised learning.
+          fr: >
+            Developpement d'outils d'annotation automatique de chants d'oiseaux basés sur des 
+            méthodes d'apprentissage automatique (<i>machine learning</i>; <i>Reservoir Computing</i>). 
+            Visualisation de données, dashboarding, apprentissage semi-supervisé.
 
       - year: 2019
         title:
